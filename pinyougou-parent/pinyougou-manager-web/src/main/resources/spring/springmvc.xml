@@ -12,6 +12,13 @@
 
     <mvc:annotation-driven/>
 
+    <!--配置资源映射-->
+    <mvc:resources mapping="/css/**" location="/css/"/>
+    <mvc:resources mapping="/js/**" location="/js/"/>
+    <mvc:resources mapping="/img/**" location="/img/"/>
+    <mvc:resources mapping="/plugins/**" location="/plugins/"/>
+    <mvc:resources mapping="/admin/**" location="/admin/"/>
+
     <!--引用dubbo服务-->
     <dubbo:application name="pinyougou-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="114.67.229.240:2181"/>
