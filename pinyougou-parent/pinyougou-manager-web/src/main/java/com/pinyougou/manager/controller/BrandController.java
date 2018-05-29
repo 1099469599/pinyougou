@@ -1,7 +1,7 @@
 package com.pinyougou.manager.controller;
 
-import com.pinyougou.entity.PageResult;
-import com.pinyougou.entity.Result;
+import entity.PageResult;
+import entity.Result;
 import com.pinyougou.pojo.TbBrand;
 import com.pinyougou.sellergoods.service.BrandService;
 import org.springframework.beans.factory.annotation.Autowired;

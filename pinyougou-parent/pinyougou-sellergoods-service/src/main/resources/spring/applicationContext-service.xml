@@ -15,5 +15,18 @@
     <dubbo:protocol name="dubbo" port="20880"/>
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="com.pinyougou.sellergoods.service.BrandService" ref="brandServiceImpl" timeout="30000"/>
+    <dubbo:service interface="com.pinyougou.sellergoods.service.GoodsDescService" ref="goodsDescServiceImpl"
+                   timeout="30000"/>
+    <dubbo:service interface="com.pinyougou.sellergoods.service.GoodsService" ref="goodsServiceImpl" timeout="30000"/>
+    <dubbo:service interface="com.pinyougou.sellergoods.service.ItemCatService" ref="itemCatServiceImpl"
+                   timeout="30000"/>
+    <dubbo:service interface="com.pinyougou.sellergoods.service.ItemService" ref="itemServiceImpl" timeout="30000"/>
+    <dubbo:service interface="com.pinyougou.sellergoods.service.SellerService" ref="sellerServiceImpl" timeout="30000"/>
+    <dubbo:service interface="com.pinyougou.sellergoods.service.SpecificationOptionService"
+                   ref="specificationOptionServiceImpl" timeout="30000"/>
+    <dubbo:service interface="com.pinyougou.sellergoods.service.SpecificationService" ref="specificationServiceImpl"
+                   timeout="30000"/>
+    <dubbo:service interface="com.pinyougou.sellergoods.service.TypeTemplateService" ref="typeTemplateServiceImpl"
+                   timeout="30000"/>
 
 </beans>

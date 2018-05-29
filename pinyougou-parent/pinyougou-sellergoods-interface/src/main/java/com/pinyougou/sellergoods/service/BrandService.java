@@ -1,7 +1,6 @@
 package com.pinyougou.sellergoods.service;
 
-import com.pinyougou.entity.PageResult;
-import com.pinyougou.entity.Result;
+import entity.PageResult;
 import com.pinyougou.pojo.TbBrand;
 
 import java.util.List;

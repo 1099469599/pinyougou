@@ -23,5 +23,14 @@
     <dubbo:application name="pinyougou-manager-web"/>
     <dubbo:registry protocol="zookeeper" address="114.67.229.240:2181"/>
     <dubbo:reference interface="com.pinyougou.sellergoods.service.BrandService" id="brandService"/>
+    <dubbo:reference interface="com.pinyougou.sellergoods.service.GoodsService" id="goodsService"/>
+    <dubbo:reference interface="com.pinyougou.sellergoods.service.GoodsDescService" id="goodsDescService"/>
+    <dubbo:reference interface="com.pinyougou.sellergoods.service.ItemCatService" id="itemCatService"/>
+    <dubbo:reference interface="com.pinyougou.sellergoods.service.ItemService" id="itemService"/>
+    <dubbo:reference interface="com.pinyougou.sellergoods.service.SellerService" id="sellerService"/>
+    <dubbo:reference interface="com.pinyougou.sellergoods.service.SpecificationService" id="specificationService"/>
+    <dubbo:reference interface="com.pinyougou.sellergoods.service.SpecificationOptionService"
+                     id="specificationOptionService"/>
+    <dubbo:reference interface="com.pinyougou.sellergoods.service.TypeTemplateService" id="typeTemplateService"/>
 
 </beans>
