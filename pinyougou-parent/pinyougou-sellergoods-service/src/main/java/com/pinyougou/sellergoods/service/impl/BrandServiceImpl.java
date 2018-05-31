@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class BrandServiceImpl implements BrandService {
@@ -113,6 +114,11 @@ public class BrandServiceImpl implements BrandService {
         pageResult.setTotal(pageInfo.getTotal());
         pageResult.setRows(pageInfo.getList());
         return pageResult;
+    }
+
+    @Override
+    public List<Map> selectOptionList() {
+        return brandMapper.selectOptionList();
     }
 
 }

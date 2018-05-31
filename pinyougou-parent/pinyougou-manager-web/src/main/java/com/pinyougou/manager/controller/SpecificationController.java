@@ -1,6 +1,7 @@
 package com.pinyougou.manager.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import entity.Specification;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -120,6 +121,11 @@ public class SpecificationController {
     @RequestMapping("/search")
     public PageResult search(@RequestBody TbSpecification specification, int page, int rows) {
         return specificationService.findPage(specification, page, rows);
+    }
+
+    @RequestMapping("/selectOptionList")
+    public List<Map> selectOptionList() {
+        return specificationService.selectOptionList();
     }
 
 }
