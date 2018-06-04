@@ -1,15 +1,16 @@
 package com.pinyougou.manager.controller;
 
-import com.pinyougou.pojo.TbGoods;
-import com.pinyougou.sellergoods.service.GoodsService;
-import entity.PageResult;
-import entity.Result;
-import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.alibaba.dubbo.config.annotation.Reference;
+import com.pinyougou.pojo.TbGoods;
+import com.pinyougou.sellergoods.service.GoodsService;
 
-import java.util.List;
+import entity.PageResult;
+import entity.Result;
 
 /**
  * controller
@@ -20,7 +21,7 @@ import java.util.List;
 @RequestMapping("/goods")
 public class GoodsController {
 
-    @Autowired
+    @Reference
     private GoodsService goodsService;
 
     /**
