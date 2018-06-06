@@ -20,6 +20,8 @@ public interface TbUserMapper {
 
     TbUser selectByPrimaryKey(Long id);
 
+    TbUser selectByName(String name);
+
     int updateByExampleSelective(@Param("record") TbUser record, @Param("example") TbUserExample example);
 
     int updateByExample(@Param("record") TbUser record, @Param("example") TbUserExample example);

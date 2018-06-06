@@ -13,10 +13,15 @@
     <description>通用的工具类</description>
 
     <dependencies>
+        <!-- 文件上传组件 -->
         <!--fastdfs依赖添加-->
         <dependency>
             <groupId>org.csource</groupId>
             <artifactId>fastdfs-client-java</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
         </dependency>
     </dependencies>
 

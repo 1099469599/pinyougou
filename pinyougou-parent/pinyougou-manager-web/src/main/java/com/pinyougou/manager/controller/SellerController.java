@@ -5,6 +5,7 @@ import com.pinyougou.pojo.TbSeller;
 import com.pinyougou.sellergoods.service.SellerService;
 import entity.PageResult;
 import entity.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,7 +21,7 @@ import java.util.List;
 @RequestMapping("/seller")
 public class SellerController {
 
-    @Reference
+    @Autowired
     private SellerService sellerService;
 
     /**
@@ -117,6 +118,23 @@ public class SellerController {
     @RequestMapping("/search")
     public PageResult search(@RequestBody TbSeller seller, int page, int rows) {
         return sellerService.findPage(seller, page, rows);
+    }
+
+    /**
+     * 更改状态
+     *
+     * @param sellerId 商家ID
+     * @param status   状态
+     */
+    @RequestMapping("/updateStatus")
+    public Result updateStatus(String sellerId, String status) {
+        try {
+            sellerService.updateStatus(sellerId, status);
+            return new Result(true, "成功");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new Result(false, "失败");
+        }
     }
 
 }

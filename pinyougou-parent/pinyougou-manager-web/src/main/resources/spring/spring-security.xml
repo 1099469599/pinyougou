@@ -2,8 +2,9 @@
 <beans:beans xmlns="http://www.springframework.org/schema/security"
              xmlns:beans="http://www.springframework.org/schema/beans"
              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
              xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+						http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!-- 设置页面不登陆也可以访问 -->
     <http pattern="/admin/login.html" security="none"></http>
@@ -26,14 +27,17 @@
         </headers>
         <logout/>
     </http>
+    <!--引用dubbo服务-->
+    <dubbo:application name="pinyougou-manager-web"/>
+    <dubbo:registry protocol="zookeeper" address="114.67.229.240:2181"/>
+    <dubbo:reference interface="com.pinyougou.sellergoods.service.UserService" id="userService"/>
 
     <!-- 认证管理器 -->
     <authentication-manager>
-        <authentication-provider>
-            <user-service>
-                <user name="admin" password="123456" authorities="ROLE_ADMIN"/>
-            </user-service>
+        <authentication-provider user-service-ref="userDetailService">
         </authentication-provider>
     </authentication-manager>
-
+    <beans:bean id="userDetailService" class="com.pinyougou.service.UserDetailsServiceImpl">
+        <beans:property name="userService" ref="userService"/>
+    </beans:bean>
 </beans:beans>

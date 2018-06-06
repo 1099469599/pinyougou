@@ -32,6 +32,7 @@ public interface BrandService {
     void deleteBrand(Long[] ids);
 
     PageResult findPage(TbBrand brand, int pageNum, int pageSize);
+
     /**
      * 品牌下拉框数据
      */

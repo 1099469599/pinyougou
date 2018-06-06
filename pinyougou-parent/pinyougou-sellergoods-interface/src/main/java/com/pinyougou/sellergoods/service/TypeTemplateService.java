@@ -19,7 +19,7 @@ public interface TypeTemplateService {
      *
      * @return
      */
-    public List<TbTypeTemplate> findAll();
+    List<TbTypeTemplate> findAll();
 
 
     /**
@@ -27,19 +27,19 @@ public interface TypeTemplateService {
      *
      * @return
      */
-    public PageResult findPage(int pageNum, int pageSize);
+    PageResult findPage(int pageNum, int pageSize);
 
 
     /**
      * 增加
      */
-    public void add(TbTypeTemplate typeTemplate);
+    void add(TbTypeTemplate typeTemplate);
 
 
     /**
      * 修改
      */
-    public void update(TbTypeTemplate typeTemplate);
+    void update(TbTypeTemplate typeTemplate);
 
 
     /**
@@ -48,7 +48,7 @@ public interface TypeTemplateService {
      * @param id
      * @return
      */
-    public TbTypeTemplate findOne(Long id);
+    TbTypeTemplate findOne(Long id);
 
 
     /**
@@ -56,7 +56,7 @@ public interface TypeTemplateService {
      *
      * @param ids
      */
-    public void delete(Long[] ids);
+    void delete(Long[] ids);
 
     /**
      * 分页
@@ -65,6 +65,6 @@ public interface TypeTemplateService {
      * @param pageSize 每页记录数
      * @return
      */
-    public PageResult findPage(TbTypeTemplate typeTemplate, int pageNum, int pageSize);
+    PageResult findPage(TbTypeTemplate typeTemplate, int pageNum, int pageSize);
 
 }

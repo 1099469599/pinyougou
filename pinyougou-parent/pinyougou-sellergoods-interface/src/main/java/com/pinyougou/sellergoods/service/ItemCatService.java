@@ -18,7 +18,7 @@ public interface ItemCatService {
      *
      * @return
      */
-    public List<TbItemCat> findAll();
+    List<TbItemCat> findAll();
 
 
     /**
@@ -26,19 +26,19 @@ public interface ItemCatService {
      *
      * @return
      */
-    public PageResult findPage(int pageNum, int pageSize);
+    PageResult findPage(int pageNum, int pageSize);
 
 
     /**
      * 增加
      */
-    public void add(TbItemCat itemCat);
+    void add(TbItemCat itemCat);
 
 
     /**
      * 修改
      */
-    public void update(TbItemCat itemCat);
+    void update(TbItemCat itemCat);
 
 
     /**
@@ -47,7 +47,7 @@ public interface ItemCatService {
      * @param id
      * @return
      */
-    public TbItemCat findOne(Long id);
+    TbItemCat findOne(Long id);
 
 
     /**
@@ -55,7 +55,7 @@ public interface ItemCatService {
      *
      * @param ids
      */
-    public void delete(Long[] ids);
+    void delete(Long[] ids);
 
     /**
      * 分页
@@ -64,12 +64,12 @@ public interface ItemCatService {
      * @param pageSize 每页记录数
      * @return
      */
-    public PageResult findPage(TbItemCat itemCat, int pageNum, int pageSize);
+    PageResult findPage(TbItemCat itemCat, int pageNum, int pageSize);
 
     /**
      * 根据上级ID返回列表
      *
      * @return
      */
-    public List<TbItemCat> findByParentId(Long parentId);
+    List<TbItemCat> findByParentId(Long parentId);
 }

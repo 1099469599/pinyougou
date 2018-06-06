@@ -32,10 +32,16 @@
     <mvc:resources mapping="/admin/**" location="/admin/"/>
 
     <!--引用dubbo服务-->
-    <dubbo:application name="pinyougou-manager-web"/>
+    <dubbo:application name="pinyougou-shop-web"/>
     <dubbo:registry protocol="zookeeper" address="114.67.229.240:2181"/>
     <dubbo:reference interface="com.pinyougou.sellergoods.service.GoodsService" id="goodsService"/>
     <dubbo:reference interface="com.pinyougou.sellergoods.service.SellerService" id="sellerService"/>
 
+    <!-- 配置多媒体解析器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"></property>
+        <!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+        <property name="maxUploadSize" value="5242880"></property>
+    </bean>
 
 </beans>

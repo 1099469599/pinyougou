@@ -44,5 +44,6 @@
     <dubbo:reference interface="com.pinyougou.sellergoods.service.SpecificationOptionService"
                      id="specificationOptionService"/>
     <dubbo:reference interface="com.pinyougou.sellergoods.service.TypeTemplateService" id="typeTemplateService"/>
+    <dubbo:reference interface="com.pinyougou.sellergoods.service.UserService" id="userService"/>
 
 </beans>
